@@ -208,7 +208,7 @@ user_pref("camera.control.face_detection.enabled",		false);
 // https://support.mozilla.org/en-US/questions/948134
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
 //user_pref("browser.search.order.1",				"DuckDuckGo");
-//user_pref("keyword.URL", 							"https://duckduckgo.com/html/?q=!+");  
+//user_pref("keyword.URL", 							"https://duckduckgo.com/html/?q=!+");
 
 // PREF: Disable GeoIP lookup on your address to set default search engine region
 // https://trac.torproject.org/projects/tor/ticket/16254
@@ -273,7 +273,7 @@ user_pref("security.mixed_content.block_display_content",	true);
 
 // PREF: Disable JAR from opening Unsafe File Types
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
-// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7
 user_pref("network.jar.open-unsafe-types",			false);
 
 // CIS 2.7.4 Disable Scripting of Plugins by JavaScript
@@ -287,7 +287,7 @@ user_pref("security.fileuri.strict_origin_policy",		true);
 
 // PREF: Disable Displaying Javascript in History URLs
 // http://kb.mozillazine.org/Browser.urlbar.filter.javascript
-// CIS 2.3.6 
+// CIS 2.3.6
 user_pref("browser.urlbar.filter.javascript",			true);
 
 // PREF: Disable asm.js
@@ -306,7 +306,8 @@ user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 // NOTICE: Disabling SVG support breaks many UI elements on many sites
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1216893
 // https://github.com/iSECPartners/publications/raw/master/reports/Tor%20Browser%20Bundle/Tor%20Browser%20Bundle%20-%20iSEC%20Deliverable%201.3.pdf#16
-user_pref("svg.disabled", true);
+// If true, breaks youtube so I disabled it
+user_pref("svg.disabled", false);
 
 
 // PREF: Disable video stats to reduce fingerprinting threat
@@ -691,7 +692,8 @@ user_pref("network.http.referer.spoofSource",			true);
 
 // PREF: Don't send referer headers when following links across different domains (disabled)
 // https://github.com/pyllyukko/user.js/issues/227
-// user_pref("network.http.referer.XOriginPolicy",		2);
+user_pref("network.http.referer.XOriginPolicy",		        2);
+user_pref("network.http.referer.XOriginTrimmingPolicy",		2);
 
 // PREF: Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
@@ -730,7 +732,8 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: Private browsing breaks Kerberos authentication
 // NOTICE: Disables "Containers" functionality (see below)
 // NOTICE: "Always use private browsing mode" (browser.privatebrowsing.autostart) disables the possibility to use password manager: https://support.mozilla.org/en-US/kb/usernames-and-passwords-are-not-saved#w_private-browsing
-user_pref("browser.privatebrowsing.autostart",			true);
+// I prefer to use containers.
+user_pref("browser.privatebrowsing.autostart",			false);
 
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
@@ -840,7 +843,7 @@ user_pref("browser.pagethumbnails.capturing_disabled",		true);
 // PREF: Don't fetch and permanently store favicons for Windows .URL shortcuts created by drag and drop
 // NOTICE: .URL shortcut files will be created with a generic icon
 // Favicons are stored as .ico files in $profile_dir\shortcutCache
-user_pref("browser.shell.shortcutFavicons",					false);
+user_pref("browser.shell.shortcutFavicons",		        false);
 
 // PREF: Disable bookmarks backups (default: 15)
 // http://kb.mozillazine.org/Browser.bookmarks.max_backups
@@ -923,7 +926,7 @@ user_pref("layout.css.visited_links_enabled",			false);
 
 // PREF: Disable URL bar autocomplete and history/bookmarks suggestions dropdown
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
-user_pref("browser.urlbar.autocomplete.enabled",		false);
+user_pref("browser.urlbar.autocomplete.enabled",		true);
 
 // PREF: Do not check if Firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
@@ -1136,3 +1139,14 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 // PREF: Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",			true); // 0x35
 user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
+
+/******************************************************************************
+ * SECTION: Extra from privacytools.io                                        *
+ ******************************************************************************/
+user_pref("browser.urlbar.speculativeConnect.enabled",          false);
+user_pref("network.http.referer.trimmingPolicy",                2);
+user_pref("privacy.userContext.longPressBehavior",              1)
+user_pref("media.peerconnection.turn.disable",		        true);
+user_pref("media.peerconnection.use_document_iceservers",	false);
+user_pref("media.peerconnection.video.enabled",		        false);
+user_pref("media.peerconnection.identity.timeout",		1);
