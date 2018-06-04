@@ -510,6 +510,7 @@ user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 // NOTICE: Containers are not available in Private Browsing mode
 // https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
 user_pref("privacy.userContext.enabled",			true);
+user_pref("privacy.userContext.longPressBehavior",              1);
 
 // PREF: Enable hardening against various fingerprinting vectors (Tor Uplift project)
 // https://wiki.mozilla.org/Security/Tor_Uplift/Tracking
@@ -1145,7 +1146,6 @@ user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
  ******************************************************************************/
 user_pref("browser.urlbar.speculativeConnect.enabled",          false);
 user_pref("network.http.referer.trimmingPolicy",                2);
-user_pref("privacy.userContext.longPressBehavior",              1)
 user_pref("media.peerconnection.turn.disable",		        true);
 user_pref("media.peerconnection.use_document_iceservers",	false);
 user_pref("media.peerconnection.video.enabled",		        false);
